@@ -1,0 +1,24 @@
+@import 'base/reset';
+
+@import 'layout/manager_system';
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+thead,
+tbody,
+th,
+tr,
+td,
+caption {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+th,
+td,
+caption {
+    text-align: center;
+    padding: 1.5px 5px;
+}

@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "montserrat_regular";
+  src: url("../vendors/fonts/google/montserrat/montserrat_regular.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "montserrat_regular";
+}
+
+.manager-system__heading {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+thead,
+tbody,
+th,
+tr,
+td,
+caption {
+  border: 1px solid black;
+}
+
+th,
+td,
+caption {
+  text-align: center;
+  padding: 1.5px 5px;
+}
+/*# sourceMappingURL=main.css.map */
