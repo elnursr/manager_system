@@ -1,4 +1,5 @@
-@import 'base/reset';
+@use 'base';
+@use 'abstracts';
 
 @import 'layout/manager_system';
 
