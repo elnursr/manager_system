@@ -37,4 +37,16 @@ caption {
   text-align: center;
   padding: 1.5px 5px;
 }
+
+tr td button:nth-child(1) {
+  padding: 3px 5px;
+  font-size: 0.7em;
+  border-radius: 7px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  border: 1px solid black;
+  color: white;
+  background-color: red;
+  background-image: linear-gradient(-135deg, #232531, #3a1011, #d3535d);
+}
 /*# sourceMappingURL=main.css.map */
