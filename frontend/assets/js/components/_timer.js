@@ -5,8 +5,8 @@ export function Timer() {
     this.totalSeconds = 0;
     this.twoDigitFormat = 0;
     this.interval = 0;
+    this.isStarted = false;
     this.isPaused = false;
-    this.isStarted = false
     this.isResumed = false;
 };
 
@@ -50,9 +50,10 @@ Timer.prototype.countUp = function (callBack) {
     }.bind(this), 1000);
 };
 
-Timer.prototype.countDown = function ({ hoursValue, minutesValue }, deviceId, callBack) {
+Timer.prototype.countDown = function ({ hoursValue, minutesValue }, callBack) {
 
     if (!this.isStarted) {
+        this.isStarted = !this.isStarted;
 
         this.totalSeconds = this.calculateTotalSeconds(hoursValue, minutesValue);
 
@@ -62,7 +63,6 @@ Timer.prototype.countDown = function ({ hoursValue, minutesValue }, deviceId, ca
                 this.totalSeconds--;
             }
             else {
-                this.isStarted = !this.isStarted;
                 let timerObject = {
                     totalSeconds: this.totalSeconds,
                     timeInterval: this.interval

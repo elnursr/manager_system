@@ -4,8 +4,7 @@ import { Relay } from './components/_relay.js';
 
 import { Timer } from './components/_timer.js';
 
-let relay = new Relay(),
-    timer = new Timer();
+let relay = new Relay();
 
 for (let i = 0; i < startRelay.length; i++) {
     let startTimer = new Timer();
@@ -23,7 +22,7 @@ for (let i = 0; i < startRelay.length; i++) {
             minutesValue: 0.5
         };
 
-        startTimer.countDown(timerObject, i, (updateDisplay) => {
+        startTimer.countDown(timerObject,(updateDisplay) => {
             timerRelay[i].innerHTML = updateDisplay;
         });
     });
