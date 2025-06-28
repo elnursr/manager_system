@@ -83,6 +83,15 @@ Timer.prototype.updateDisplay = function () {
     return `${this.setTwoDigitFormat(this.hours)}:${this.setTwoDigitFormat(this.minutes)}:${this.setTwoDigitFormat(this.seconds)}`;
 };
 
+Timer.prototype.timeNow = function () {
+    let date = new Date(),
+        hours = date.getHours(),
+        minutes = date.getMinutes(),
+        seconds = date.getSeconds();
+
+    return `${this.setTwoDigitFormat(hours)}:${this.setTwoDigitFormat(minutes)}:${this.setTwoDigitFormat(seconds)}`;
+};
+
 Timer.prototype.clearInterval = function ({ totalSeconds, timeInterval }) {
     if (totalSeconds <= 0) {
         clearInterval(timeInterval);

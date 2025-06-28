@@ -1,0 +1,60 @@
+{
+    "devices": [
+        {
+            "Id": 1,
+            "name": "Play Station 3",
+            "mac_address": "",
+            "logo": "ps_logo",
+            "logo_format": "svg"
+        },
+        {
+            "Id": 2,
+            "name": "Play Station 4",
+            "mac_address": "",
+            "logo": "ps_logo",
+            "logo_format": "svg"
+        },
+        {
+            "Id": 3,
+            "name": "Play Station 4 Pro",
+            "mac_address": "",
+            "logo": "ps_logo",
+            "logo_format": "svg"
+        },
+        {
+            "Id": 4,
+            "name": "Play Station 5",
+            "mac_address": "",
+            "logo": "ps_logo",
+            "logo_format": "svg"
+        },
+        {
+            "Id": 5,
+            "name": "Play Station 5 Pro",
+            "mac_address": "",
+            "logo": "ps_logo",
+            "logo_format": "svg"
+        },
+        {
+            "Id": 6,
+            "name": "XBOX",
+            "mac_address": "",
+            "logo": "xbox_logo",
+            "logo_format": "svg"
+        },
+        {
+            "Id": 7,
+            "name": "Desktop PC",
+            "mac_address": "",
+            "logo": "pc_logo",
+            "logo_format": "svg"
+        },
+        {
+            "Id": 8,
+            "name": "Desktop PC",
+            "mac_address": "",
+            "logo": "pc_logo",
+            "logo_format": "svg"
+        }
+    ]
+}
