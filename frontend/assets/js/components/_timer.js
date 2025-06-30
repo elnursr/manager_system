@@ -1,7 +1,7 @@
 export function Timer() {
-    this.seconds = 0;
-    this.minutes = 0;
     this.hours = 0;
+    this.minutes = 0;
+    this.seconds = 0;
     this.totalSeconds = 0;
     this.twoDigitFormat = 0;
     this.interval = 0;
@@ -81,15 +81,6 @@ Timer.prototype.updateDisplay = function () {
     this.minutes = this.calculateMinutes(this.totalSeconds);
     this.seconds = this.calculateSeconds(this.totalSeconds);
     return `${this.setTwoDigitFormat(this.hours)}:${this.setTwoDigitFormat(this.minutes)}:${this.setTwoDigitFormat(this.seconds)}`;
-};
-
-Timer.prototype.timeNow = function () {
-    let date = new Date(),
-        hours = date.getHours(),
-        minutes = date.getMinutes(),
-        seconds = date.getSeconds();
-
-    return `${this.setTwoDigitFormat(hours)}:${this.setTwoDigitFormat(minutes)}:${this.setTwoDigitFormat(seconds)}`;
 };
 
 Timer.prototype.clearInterval = function ({ totalSeconds, timeInterval }) {

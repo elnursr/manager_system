@@ -4,33 +4,40 @@ import { Relay } from './components/_relay.js';
 
 import { Timer } from './components/_timer.js';
 
+import { Time } from './components/_time.js';
+
+let time = new Time();
+
 for (let i = 0; i < startRelay.length; i++) {
 
     let relay = new Relay(),
+        time = new Time(),
         startTimer = new Timer();
+
+    let isStartCountdown = false;
 
     startRelay[i].addEventListener('click', function (e) {
 
         e.preventDefault();
 
-        // startTimer.countUp((updateDisplay) => {
+        startTimer.countUp((updateDisplay) => {
+            timerRelay[i].innerHTML = updateDisplay;
+        });
+
+
+        if (!isStartCountdown) {
+            isStartCountdown = true;
+            startTime[i].innerHTML = `${time.timeNow()}`;
+        }
+
+        // let timerObject = {
+        //     hoursValue: 0,
+        //     minutesValue: 0.1
+        // };
+
+        // startTimer.countDown(timerObject, (updateDisplay) => {
         //     timerRelay[i].innerHTML = updateDisplay;
         // });
-
-        let now = new Date();
-
-        let hours = now.getHours(),
-            minutes = now.getMinutes();
-
-        let timerObject = {
-            hoursValue: 0,
-            minutesValue: 0.1
-        };
-
-        startTimer.countDown(timerObject, (updateDisplay) => {
-            timerRelay[i].innerHTML = updateDisplay;
-            startTime[i].innerHTML = `${startTimer.timeNow()}`;
-        });
 
         // if (toggleRelay[i].textContent === 'Turned Off') {
         //     toggleRelay[i].textContent = 'Turned On'
