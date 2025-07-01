@@ -8,6 +8,8 @@ import { Time } from './components/_time.js';
 
 let time = new Time();
 
+let startedTimerList = [];
+
 for (let i = 0; i < startRelay.length; i++) {
 
     let relay = new Relay(),
@@ -16,14 +18,27 @@ for (let i = 0; i < startRelay.length; i++) {
 
     let isStartCountdown = false;
 
+    startedTimerList.push(startTimer);
+
     startRelay[i].addEventListener('click', function (e) {
 
         e.preventDefault();
 
+        if (startRelay[i].dataset.state === 'start' || startRelay[i].dataset.state === 'resume') {
+            startRelay[i].textContent = 'Pause';
+            startRelay[i].dataset.state = 'pause';
+        } else if (startRelay[i].dataset.state === 'pause') {
+            startRelay[i].textContent = 'Resume';
+            startRelay[i].dataset.state = 'resume';
+        }
+        else {
+            startRelay[i].textContent = 'Start';
+            startRelay[i].dataset.state = 'start';
+        }
+
         startTimer.countUp((updateDisplay) => {
             timerRelay[i].innerHTML = updateDisplay;
         });
-
 
         if (!isStartCountdown) {
             isStartCountdown = true;
@@ -39,18 +54,17 @@ for (let i = 0; i < startRelay.length; i++) {
         //     timerRelay[i].innerHTML = updateDisplay;
         // });
 
-        // if (toggleRelay[i].textContent === 'Turned Off') {
-        //     toggleRelay[i].textContent = 'Turned On'
-        //     toggleRelay[i].style.backgroundImage = 'linear-gradient(135deg, rgb(35, 37, 49), rgb(21, 56, 49), rgb(31, 175, 129)';
-        // } else {
-        //     toggleRelay[i].textContent = 'Turned Off'
-        //     toggleRelay[i].style.backgroundImage = 'linear-gradient(-135deg, rgb(35, 37, 49), rgb(58, 16, 17), rgb(211, 83, 93))';
-        // }
     });
 }
 
 for (let i = 0; i < stopRelay.length; i++) {
+    let relay = new Relay(),
+        stopTimer = new Timer();
     stopRelay[i].addEventListener('click', function (e) {
         e.preventDefault();
+        // console.log(relay.toggleRelay(i));
+        startRelay[i].textContent = 'Start';
+        startRelay[i].dataset.state = 'start';
+        timerRelay[i].innerHTML = startedTimerList[i].stop();
     });
 }

@@ -7,7 +7,6 @@ export function Timer() {
     this.interval = 0;
     this.isStarted = false;
     this.isPaused = false;
-    this.isResumed = false;
 };
 
 Timer.prototype.calculateHours = function (totalSeconds) {
@@ -42,12 +41,18 @@ Timer.prototype.setTwoDigitFormat = function (time) {
 };
 
 Timer.prototype.countUp = function (callBack) {
-    setInterval(function () {
-
-        callBack(this.updateDisplay());
-        this.totalSeconds++;
-
-    }.bind(this), 1000);
+    if (!this.isStarted) {
+        this.isStarted = !this.isStarted;
+        this.interval = setInterval(function () {
+            if (!this.isPaused) {
+                callBack(this.updateDisplay());
+                this.totalSeconds++;
+            }
+        }.bind(this), 1000);
+    }
+    else {
+        this.pauseResume();
+    }
 };
 
 Timer.prototype.countDown = function ({ hoursValue, minutesValue }, callBack) {
@@ -63,16 +68,12 @@ Timer.prototype.countDown = function ({ hoursValue, minutesValue }, callBack) {
                 this.totalSeconds--;
             }
             else {
-                let timerObject = {
-                    totalSeconds: this.totalSeconds,
-                    timeInterval: this.interval
-                };
-                this.clearInterval(timerObject);
+                clearInterval(this.interval);
             }
         }, 1000);
     }
     else {
-        this.pause();
+        this.pauseResume();
     }
 };
 
@@ -83,20 +84,19 @@ Timer.prototype.updateDisplay = function () {
     return `${this.setTwoDigitFormat(this.hours)}:${this.setTwoDigitFormat(this.minutes)}:${this.setTwoDigitFormat(this.seconds)}`;
 };
 
-Timer.prototype.clearInterval = function ({ totalSeconds, timeInterval }) {
-    if (totalSeconds <= 0) {
-        clearInterval(timeInterval);
-    }
-};
-
 Timer.prototype.checkStart = function () {
     if (this.isStarted) return;
 };
 
-Timer.prototype.pause = function () {
+Timer.prototype.pauseResume = function () {
     this.isPaused = !this.isPaused;
 };
 
-Timer.prototype.resume = function () {
+Timer.prototype.stop = function () {
+    clearInterval(this.interval);
+    this.interval = 0;
+    this.totalSeconds = 0;
+    this.isStarted = false;
     this.isPaused = false;
+    return this.updateDisplay();
 };
