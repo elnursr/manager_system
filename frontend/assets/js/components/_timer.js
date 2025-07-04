@@ -56,19 +56,21 @@ Timer.prototype.countUp = function (callBack) {
 };
 
 Timer.prototype.countDown = function ({ hoursValue, minutesValue }, callBack) {
-
     if (!this.isStarted) {
-        this.isStarted = !this.isStarted;
+        this.isStarted = true;
 
         this.totalSeconds = this.calculateTotalSeconds(hoursValue, minutesValue);
 
         this.interval = setInterval(() => {
-            if (this.totalSeconds >= 0 && !this.isPaused) {
-                callBack(this.updateDisplay());
-                this.totalSeconds--;
-            }
-            else {
-                clearInterval(this.interval);
+            if (!this.isPaused) {
+                if (this.totalSeconds >= 0) {
+                    callBack(this.updateDisplay());
+                    this.totalSeconds--;
+                }
+                else {
+                    this.isStarted = false;
+                    clearInterval(this.interval);
+                }
             }
         }, 1000);
     }
