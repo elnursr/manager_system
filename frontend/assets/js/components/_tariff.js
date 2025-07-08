@@ -2,24 +2,25 @@ import { Timer } from './_timer.js';
 
 let timer = new Timer();
 
-export function Tariff(price, isVIP = false) {
-    this.price = price;
+export function Tariff(pricePerTime, isVIP = false) {
     this.isVIP = isVIP;
+    this.pricePerTime = pricePerTime;
+    this.price = 0;
     this.currency = '';
-    this.isCalculates = false;
+    this.isCalculated = false;
 }
 
 Tariff.prototype.calculatePrice = function (userInputTime) {
-    if (!this.isCalculates) {
-        this.isCalculates = true;
-        this.price = (userInputTime * this.price) / 3600;
+    if (!this.isCalculated) {
+        this.isCalculated = true;
+        this.price = (userInputTime * this.pricePerTime) / 3600;
 
         if (this.price >= 1) {
-            this.currency = '<i class="fa-solid fa-manat-sign"></i>';
+            this.currency = 'azn';
             return `${this.price.toFixed(2)}_${this.currency}`;
         }
         else {
-            this.currency = '<i class="fas fa-coins"></i>';
+            this.currency = 'qepik';
             return `${Math.trunc(this.price * 100)}_${this.currency}`;
         }
     }

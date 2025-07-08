@@ -2,9 +2,9 @@ export function Timer() {
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
+    this.interval = 0;
     this.totalSeconds = 0;
     this.twoDigitFormat = 0;
-    this.interval = 0;
     this.isStarted = false;
     this.isPaused = false;
 };
@@ -48,7 +48,7 @@ Timer.prototype.countUp = function (callBack) {
                 callBack(this.updateDisplay());
                 this.totalSeconds++;
             }
-        }.bind(this), 1000);
+        }.bind(this), 1);
     }
     else {
         this.pauseResume();
