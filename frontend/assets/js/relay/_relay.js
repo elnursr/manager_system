@@ -1,21 +1,29 @@
-export function Relay() {
-    this.relayIndex = 0;
-    this.startAllId = 55;
-    this.stopAllId = 56;
-    this.port = 30000;
-    this.ip = '192.168.1.4';
-    this.protocol = 'http://';
-    this.isStart = {};
+export function Relay({
+    relayIndex = 0,
+    startAllId = 0, //55
+    stopAllId = 0, //56
+    port = 0, //30000
+    ip = '', //192.168.1.4
+    protocol = '', //http://
+    isStart = {}
+} = {}) {
+    this.relayIndex = relayIndex;
+    this.startAllId = startAllId;
+    this.stopAllId = stopAllId;
+    this.port = port;
+    this.ip = ip;
+    this.protocol = protocol;
+    this.isStart = isStart;
 };
 
 Relay.prototype.startAllRelay = function () {
-    // fetch(`${this.protocol}${this.ip}/${this.port}/${this.startAllId}`);
-    console.log(`${this.protocol}${this.ip}/${this.port}/${this.startAllId + 1}`);
+    fetch(`${this.protocol}${this.ip}/${this.port}/${this.startAllId}`);
+    // console.log(`${this.protocol}${this.ip}/${this.port}/${this.startAllId + 1}`);
 };
 
 Relay.prototype.stopAllRelay = function () {
-    // fetch(`${this.protocol}${this.ip}/${this.port}/${this.stopAllId}`);
-    console.log(`${this.protocol}${this.ip}/${this.port}/${this.stopAllId}`);
+    fetch(`${this.protocol}${this.ip}/${this.port}/${this.stopAllId}`);
+    // console.log(`${this.protocol}${this.ip}/${this.port}/${this.stopAllId}`);
 };
 
 Relay.prototype.startRelay = function (deviceId) {

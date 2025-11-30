@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
 @font-face {
-  font-family: "montserrat_regular";
+  font-family: "mortal_kombat_1";
   src: url("../vendors/fonts/google/montserrat/montserrat_regular.ttf") format("truetype");
 }
 * {
@@ -14,40 +15,13 @@
   font-family: "montserrat_regular";
 }
 
-.manager-system__heading {
-  text-align: center;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-table,
-thead,
-tbody,
-th,
-tr,
-td,
-caption {
-  border: 1px solid black;
-}
-
-th,
-td,
-caption {
-  text-align: center;
-  padding: 1.5px 5px;
-}
-
-tr td button:nth-child(1) {
-  padding: 3px 5px;
-  font-size: 0.7em;
-  border-radius: 7px;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  border: 1px solid black;
+::-moz-selection {
   color: white;
-  background-color: red;
-  background-image: linear-gradient(-135deg, #232531, #3a1011, #d3535d);
+  background-color: black;
+}
+
+::selection {
+  color: white;
+  background-color: black;
 }
 /*# sourceMappingURL=main.css.map */

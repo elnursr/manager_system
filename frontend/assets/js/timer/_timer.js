@@ -1,12 +1,21 @@
-export function Timer() {
-    this.hours = 0;
-    this.minutes = 0;
-    this.seconds = 0;
-    this.interval = 0;
-    this.totalSeconds = 0;
-    this.twoDigitFormat = 0;
-    this.isStarted = false;
-    this.isPaused = false;
+export function Timer({
+    hours = 0,
+    minutes = 0,
+    seconds = 0,
+    interval = 0,
+    totalSeconds = 0,
+    twoDigitFormat = 0,
+    isPaused = false,
+    isStarted = false
+} = {}) {
+    this.hours = hours;
+    this.minutes = minutes;
+    this.seconds = seconds;
+    this.interval = interval;
+    this.totalSeconds = totalSeconds;
+    this.twoDigitFormat = twoDigitFormat;
+    this.isPaused = isPaused;
+    this.isStarted = isStarted;
 };
 
 Timer.prototype.calculateHours = function (totalSeconds) {

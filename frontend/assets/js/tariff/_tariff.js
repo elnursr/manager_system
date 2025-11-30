@@ -1,13 +1,15 @@
-import { Timer } from './_timer.js';
-
-let timer = new Timer();
-
-export function Tariff(pricePerTime, isVIP = false) {
-    this.isVIP = isVIP;
+export function Tariff({
+    price = 0,
+    currency = '',
+    pricePerTime = 0,
+    isVIP = false,
+    isCalculated = false
+} = {}) {
+    this.price = price;
+    this.currency = currency;
     this.pricePerTime = pricePerTime;
-    this.price = 0;
-    this.currency = '';
-    this.isCalculated = false;
+    this.isVIP = isVIP;
+    this.isCalculated = isCalculated;
 }
 
 Tariff.prototype.calculatePrice = function (userInputTime) {

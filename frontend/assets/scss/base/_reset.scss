@@ -1,9 +1,23 @@
+// ******* external_url_font_family_start_here *******
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+// ******* external_url_font_family_end_here *******
+
+// ******* external_url_font_awesome_start_here *******
+
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
 
+// ******* external_url_font_awesome_end_here *******
+
+// ******* internal_url_font_family_start_here *******
+
 @font-face {
-    font-family: 'montserrat_regular';
+    font-family: 'mortal_kombat_1';
     src: url('../vendors/fonts/google/montserrat/montserrat_regular.ttf') format('truetype');
 }
+
+// ******* internal_url_font_family_end_here *******
 
 * {
     margin: 0;
