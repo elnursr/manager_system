@@ -13,7 +13,7 @@
 // ******* internal_url_font_family_start_here *******
 
 @font-face {
-    font-family: 'mortal_kombat_1';
+    font-family: 'montserrat_regular';
     src: url('../vendors/fonts/google/montserrat/montserrat_regular.ttf') format('truetype');
 }
 
@@ -27,4 +27,11 @@
     list-style-type: none;
     box-sizing: border-box;
     font-family: 'montserrat_regular';
+}
+
+
+table,
+th,
+td {
+    border-collapse: collapse;
 }

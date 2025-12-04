@@ -1,0 +1,53 @@
+.modal-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 18%;
+    padding: 17px;
+    opacity: 0;
+    border-radius: 7px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform .3s, opacity .3s;
+    background-color: rgb(231, 225, 238);
+
+    &.active {
+        display: flex;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+
+    &__close {
+        cursor: pointer;
+        user-select: none;
+        display: inline-block;
+        position: absolute;
+        right: 5px;
+        top: -5px;
+        font-size: 2.3em;
+        transform: rotate(45deg);
+        color: rgb(187, 23, 23);
+    }
+
+    input {
+        border: none;
+        margin: 5px 0;
+        padding: 3px 5px;
+    }
+
+    label {
+        display: block;
+    }
+
+    &__button {
+        cursor: pointer;
+        border: none;
+        margin: 7px 0;
+        padding: 7px 12px;
+        border-radius: 3px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(27, 111, 179);
+    }
+}

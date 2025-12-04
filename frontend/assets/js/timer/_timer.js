@@ -2,6 +2,7 @@ export function Timer({
     hours = 0,
     minutes = 0,
     seconds = 0,
+    milliSeconds = 0,
     interval = 0,
     totalSeconds = 0,
     twoDigitFormat = 0,
@@ -29,8 +30,13 @@ Timer.prototype.calculateMinutes = function (totalSeconds) {
 };
 
 Timer.prototype.calculateSeconds = function (totalSeconds) {
-    this.seconds = Math.trunc(totalSeconds % 60);
+    this.seconds = totalSeconds % 60;
     return this.seconds;
+};
+
+Timer.prototype.calculateMilliSeconds = function (totalSeconds) {
+    this.milliSeconds = totalSeconds % 100;
+    return this.milliSeconds;
 };
 
 Timer.prototype.calculateTotalSeconds = function () {
@@ -57,7 +63,7 @@ Timer.prototype.countUp = function (callBack) {
                 callBack(this.updateDisplay());
                 this.totalSeconds++;
             }
-        }.bind(this), 1);
+        }.bind(this), 1000);
     }
     else {
         this.pauseResume();

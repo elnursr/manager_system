@@ -9,7 +9,7 @@
 
     <title>Manager System</title>
 
-    <!-- <link rel="icon" href=""> -->
+    <link rel="icon" href="assets/media/png/favicon.png">
 
     <link rel="stylesheet" href="assets/css/main.css">
 
@@ -19,8 +19,114 @@
 
 <body>
 
-    
+    <section class="manager-system">
+        <h1 class="manager-system__heading">Welcome Manager System</h1>
+        <div class="container">
+            <table class="manager-system__table">
+                <caption class="manager-system__caption">
+                    <!-- <label for="">Create Relay Devices</label>
+                    <input type="number" min="1">
+                    <button>Create</button> -->
+                    Manager System v.1.0
+                </caption>
+                <thead>
+                    <tr>
+                        <th class="manager-system__table-header">ID</th>
+                        <th class="manager-system__table-header">Device Type</th>
+                        <th class="manager-system__table-header">Start Time</th>
+                        <th class="manager-system__table-header">End Time</th>
+                        <th class="manager-system__table-header">Duration</th>
+                        <th class="manager-system__table-header">Tariff</th>
+                        <th class="manager-system__table-header">Total Price</th>
+                        <th class="manager-system__table-header">Status</th>
+                        <th class="manager-system__table-header">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="manager-system__table-data">1</td>
+                        <td class="manager-system__table-data">Console</td>
+                        <td class="manager-system__table-data manager-system__table-start-time">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-end-time">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-duration">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-tariff">$ 1/hr</td>
+                        <td class="manager-system__table-data manager-system__table-total-price">$ 1.00</td>
+                        <td class="manager-system__table-data manager-system__table-status">
+                            <span class="manager-system__table-status--free" data-status="free"></span>
+                        </td>
+                        <td class="manager-system__table-data manager-system__table-actions">
+                            <button
+                                class="manager-system__table-button manager-system__table-start-button">Start</button>
+                            <button
+                                class="manager-system__table-button manager-system__table-begin-button">Begin</button>
+                            <button
+                                class="manager-system__table-button manager-system__table-disable-button">Disable</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="manager-system__table-data">2</td>
+                        <td class="manager-system__table-data">Console</td>
+                        <td class="manager-system__table-data manager-system__table-start-time">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-end-time">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-duration">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-tariff">$ 1/hr</td>
+                        <td class="manager-system__table-data manager-system__table-total-price">$ 1.00</td>
+                        <td class="manager-system__table-data manager-system__table-status">
+                            <span class="manager-system__table-status--free" data-status="free"></span>
+                        </td>
+                        <td class="manager-system__table-data manager-system__table-actions">
+                            <button
+                                class="manager-system__table-button manager-system__table-start-button">Start</button>
+                            <button
+                                class="manager-system__table-button manager-system__table-begin-button">Begin</button>
+                            <button
+                                class="manager-system__table-button manager-system__table-disable-button">Disable</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="manager-system__table-data">3</td>
+                        <td class="manager-system__table-data">Console</td>
+                        <td class="manager-system__table-data manager-system__table-start-time">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-end-time">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-duration">00:00:00</td>
+                        <td class="manager-system__table-data manager-system__table-tariff">$ 1/hr</td>
+                        <td class="manager-system__table-data manager-system__table-total-price">$ 1.00</td>
+                        <td class="manager-system__table-data manager-system__table-status">
+                            <span class="manager-system__table-status--free" data-status="free"></span>
+                        </td>
+                        <td class="manager-system__table-data manager-system__table-actions">
+                            <button
+                                class="manager-system__table-button manager-system__table-start-button">Start</button>
+                            <button
+                                class="manager-system__table-button manager-system__table-begin-button">Begin</button>
+                            <button
+                                class="manager-system__table-button manager-system__table-disable-button">Disable</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
+    <section class="modal">
+        <form class="modal-menu modal-menu-start">
+            <span class="modal-menu__close">+</span>
+            <label for="hours">Hours</label>
+            <input id="hours" class="modal-menu-start__hours" min="1" type="number" placeholder="Please enter hours">
+            <label for="minutes">Minutes</label>
+            <input id="minutes" class="modal-menu-start__minutes" min="1" type="number"
+                placeholder="Please enter minutes">
+            <label for="tariff">Tariff</label>
+            <input id="tariff" class="modal-menu-start__tariff" min="1" type="number" placeholder="Please enter tariff">
+            <button class="modal-menu__button modal-menu-start__button">OK</button>
+        </form>
+        <form class="modal-menu modal-menu-begin">
+            <span class="modal-menu__close">+</span>
+            <label for="tariff">Tariff</label>
+            <input id="tariff" class="modal-menu-begin__tariff" min="1" type="number" placeholder="Please enter tariff">
+            <button class="modal-menu__button modal-menu-begin__button">OK</button>
+        </form>
+    </section>
 </body>
 
 </html>

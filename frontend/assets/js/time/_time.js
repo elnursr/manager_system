@@ -26,8 +26,6 @@ Time.prototype.timeNow = function () {
 }
 
 Time.prototype.formatTime = function () {
-
-    console.log(this.timer);
     
     this.date = new Date();
 
